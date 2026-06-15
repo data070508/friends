@@ -1,0 +1,468 @@
+/* =========================
+   GLOBAL SETTINGS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+    --bg: #050816;
+    --card: rgba(255,255,255,0.08);
+    --card-border: rgba(255,255,255,0.15);
+    --text: #ffffff;
+    --secondary: #b8bdd0;
+    --accent: #ff4d89;
+    --success: #00d26a;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        radial-gradient(circle at top,
+        #1b2345,
+        #050816 50%);
+    color: var(--text);
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   SPLASH SCREEN
+========================= */
+
+#splash {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    background: #050816;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.logo {
+    font-size: 4rem;
+    animation: heartbeat 1.5s infinite;
+}
+
+
+#splash h1 {
+    margin-top: 15px;
+    font-size: 1.8rem;
+}
+
+
+#splash p {
+    color: var(--secondary);
+    margin-top: 8px;
+}
+
+
+.loader {
+    margin-top: 25px;
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+    border: 4px solid #333;
+    border-top-color: var(--accent);
+
+    animation: spin 1s linear infinite;
+}
+
+
+/* =========================
+   MAIN APP
+========================= */
+
+#app {
+    display: none;
+    min-height: 100vh;
+}
+
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    height: 65px;
+    padding: 0 18px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    backdrop-filter: blur(18px);
+    background: rgba(5,8,22,.7);
+
+    border-bottom: 1px solid var(--card-border);
+}
+
+
+header h2 {
+    font-size: 1.2rem;
+}
+
+
+#refresh-btn {
+    background: var(--card);
+    border: 0;
+    color: white;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+    font-size: 1rem;
+}
+
+
+/* =========================
+   PAGES
+========================= */
+
+.page {
+    display: none;
+    min-height: calc(100vh - 130px);
+    padding: 20px 15px 100px;
+}
+
+.page.active {
+    display: block;
+}
+
+
+.page h1,
+.page h2 {
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.hero-card,
+.stat,
+.album-card,
+.media-card,
+.story-card,
+.friend-card,
+.audio-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+
+    backdrop-filter: blur(20px);
+
+    border-radius: 22px;
+}
+
+
+/* =========================
+   HOME
+========================= */
+
+.hero-card {
+    padding: 22px;
+    margin-bottom: 20px;
+}
+
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+
+.stat {
+    padding: 16px;
+    text-align: center;
+}
+
+
+.stat h3 {
+    font-size: 1.5rem;
+    color: var(--accent);
+}
+
+
+.stat p {
+    color: var(--secondary);
+}
+
+
+/* =========================
+   MEDIA GRID
+========================= */
+
+.media-grid,
+.albums,
+.friends-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 12px;
+}
+
+
+.media-card img,
+.album-card img,
+.friend-card img {
+    width: 100%;
+    aspect-ratio: 1/1;
+
+    object-fit: cover;
+
+    border-radius: 18px 18px 0 0;
+}
+
+
+.media-card,
+.album-card {
+    overflow: hidden;
+}
+
+
+.media-info {
+    padding: 12px;
+}
+
+
+.media-info h3 {
+    font-size: .9rem;
+}
+
+
+.media-info p {
+    font-size: .75rem;
+    color: var(--secondary);
+}
+
+
+/* =========================
+   FRIENDS
+========================= */
+
+.friend-card {
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+
+.friend-card img {
+    border-radius: 22px 22px 0 0;
+}
+
+
+.friend-card h3 {
+    margin-top: 10px;
+}
+
+
+.friend-card p {
+    color: var(--secondary);
+    padding: 5px 10px;
+}
+
+
+/* =========================
+   AUDIO
+========================= */
+
+.audio-card,
+.story-card {
+    padding: 18px;
+    margin-bottom: 12px;
+}
+
+
+audio {
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+#search-input {
+    width: 100%;
+    height: 50px;
+
+    background: var(--card);
+    color: white;
+
+    border: 1px solid var(--card-border);
+    border-radius: 15px;
+
+    padding: 0 15px;
+    margin-bottom: 20px;
+}
+
+
+#search-input::placeholder {
+    color: var(--secondary);
+}
+
+
+/* =========================
+   VIEWER
+========================= */
+
+#viewer {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,.95);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+}
+
+
+#viewer-content img,
+#viewer-content video {
+    width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+
+#close-viewer {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    border: none;
+    background: white;
+}
+
+
+/* =========================
+   BOTTOM NAVIGATION
+========================= */
+
+#bottom-nav {
+    position: fixed;
+    bottom: 0;
+
+    width: 100%;
+    height: 75px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background: rgba(5,8,22,.85);
+
+    backdrop-filter: blur(25px);
+
+    border-top: 1px solid var(--card-border);
+
+    z-index: 1000;
+}
+
+
+#bottom-nav button {
+    background: none;
+    border: none;
+
+    color: var(--secondary);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    font-size: .75rem;
+}
+
+
+#bottom-nav button.active {
+    color: var(--accent);
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+@keyframes heartbeat {
+
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+}
+
+
+/* =========================
+   MOBILE ONLY
+========================= */
+
+@media (min-width: 700px) {
+
+    body::before {
+
+        content:
+        "📱 Memory Universe is designed for mobile devices";
+
+        position: fixed;
+        inset: 0;
+
+        background: #000;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        font-size: 2rem;
+
+        z-index: 999999;
+
+        padding: 30px;
+
+        text-align: center;
+    }
+
+}
