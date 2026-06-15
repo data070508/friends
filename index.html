@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Memory Universe ❤️</title>
+
+    <!-- App Style -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Icons -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+</head>
+
+
+<body>
+
+
+<!-- =========================
+        SPLASH SCREEN
+========================= -->
+
+<div id="splash">
+
+    <div class="logo">
+        ❤️
+    </div>
+
+    <h1>
+        Memory Universe
+    </h1>
+
+    <p>
+        Loading our memories...
+    </p>
+
+    <div class="loader"></div>
+
+</div>
+
+
+
+<!-- =========================
+        MAIN APP
+========================= -->
+
+<div id="app">
+
+
+<!-- HEADER -->
+
+<header>
+
+    <h2>
+        ❤️ Memory Universe
+    </h2>
+
+    <button id="refresh-btn">
+        🔄
+    </button>
+
+</header>
+
+
+<!-- HOME PAGE -->
+
+<section id="home"
+         class="page active">
+
+<h1>
+    Welcome Back
+</h1>
+
+
+<div class="hero-card">
+
+    <h3>
+        Our Journey
+    </h3>
+
+    <p>
+        Friends for
+        <span id="friend-days">
+            0
+        </span>
+        days ❤️
+    </p>
+
+</div>
+
+
+<div class="stats">
+
+<div class="stat">
+
+<h3 id="photo-count">
+0
+</h3>
+
+<p>
+Photos
+</p>
+
+</div>
+
+
+<div class="stat">
+
+<h3 id="video-count">
+0
+</h3>
+
+<p>
+Videos
+</p>
+
+</div>
+
+
+<div class="stat">
+
+<h3 id="audio-count">
+0
+</h3>
+
+<p>
+Audio
+</p>
+
+</div>
+
+</div>
+
+
+<h3>
+Latest Memories
+</h3>
+
+<div id="latest-media"
+     class="media-grid">
+
+</div>
+
+
+</section>
+
+
+
+
+<!-- PHOTOS -->
+
+<section id="photos"
+         class="page">
+
+<h2>
+📸 Photos
+</h2>
+
+<div id="photo-albums"
+     class="albums">
+
+</div>
+
+</section>
+
+
+
+
+<!-- VIDEOS -->
+
+<section id="videos"
+         class="page">
+
+<h2>
+🎥 Videos
+</h2>
+
+
+<div id="video-albums"
+     class="albums">
+
+</div>
+
+</section>
+
+
+
+
+<!-- AUDIO -->
+
+<section id="audio"
+         class="page">
+
+
+<h2>
+🎵 Audio Memories
+</h2>
+
+
+<div id="audio-list">
+
+</div>
+
+
+</section>
+
+
+
+
+<!-- STORIES -->
+
+<section id="stories"
+         class="page">
+
+
+<h2>
+📖 Stories
+</h2>
+
+
+<div id="stories-list">
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- FRIENDS -->
+
+<section id="friends"
+         class="page">
+
+<h2>
+👥 Our Gang
+</h2>
+
+
+<div id="friends-list"
+     class="friends-grid">
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- SEARCH -->
+
+<section id="search"
+         class="page">
+
+
+<h2>
+🔎 Search Memories
+</h2>
+
+
+<input 
+    type="text"
+    id="search-input"
+    placeholder="Search photos, videos, stories...">
+
+
+<div id="search-results">
+
+</div>
+
+
+</section>
+
+
+
+</div>
+
+
+<!-- =========================
+        FULL SCREEN VIEWER
+========================= -->
+
+
+<div id="viewer">
+
+
+<button id="close-viewer">
+
+✖
+
+</button>
+
+
+<div id="viewer-content">
+
+</div>
+
+
+</div>
+
+
+
+
+<!-- =========================
+        BOTTOM MOBILE NAV
+========================= -->
+
+
+<nav id="bottom-nav">
+
+
+<button data-page="home">
+🏠
+<span>Home</span>
+</button>
+
+
+<button data-page="photos">
+📸
+<span>Photos</span>
+</button>
+
+
+<button data-page="videos">
+🎥
+<span>Videos</span>
+</button>
+
+
+<button data-page="audio">
+🎵
+<span>Audio</span>
+</button>
+
+
+<button data-page="search">
+🔎
+<span>Search</span>
+</button>
+
+
+</nav>
+
+
+
+<!-- JavaScript -->
+
+<script src="config.js"></script>
+
+<script src="app.js"></script>
+
+<script src="github.js"></script>
+
+<script src="media.js"></script>
+
+<script src="search.js"></script>
+
+
+</body>
+
+</html>
